@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/IamHaque/flames#readme",
   "dependencies": {
-    "express": "^4.18.1",
-    "simple-node-logger": "^21.8.12"
+    "express": "^4.18.1"
   }
 }
