@@ -1,0 +1,27 @@
+{
+  "name": "flames",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IamHaque/flames.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IamHaque/flames/issues"
+  },
+  "homepage": "https://github.com/IamHaque/flames#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "simple-node-logger": "^21.8.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
