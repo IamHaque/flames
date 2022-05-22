@@ -1,9 +1,6 @@
 const express = require("express");
-const fs = require("fs");
 const app = express();
 const port = 3000;
-
-const log = require("simple-node-logger").createSimpleFileLogger("logger.log");
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
@@ -23,7 +20,7 @@ app.post("/calcFlames", (req, res) => {
     return res.status(406).send({ error: "Not a valid name." });
 
   const flames = calculateFlames(n1, n2);
-  log.info(`FLAMES | ${n1} and ${n2} are ${flames}`);
+  console.log(`${Date.now()} | FLAMES | ${n1} and ${n2} are ${flames}`);
 
   return res.json({
     result: `${n1} and ${n2} are ${flames}`,
@@ -41,24 +38,10 @@ app.post("/calcPercentage", (req, res) => {
     return res.status(406).send({ error: "Not a valid name." });
 
   const lovePercent = calculateLovePercent(n1, n2);
-  log.info(`Love % | ${n1} loves ${n2} ${lovePercent} %`);
+  console.log(`${Date.now()} | Love % | ${n1} loves ${n2} ${lovePercent} %`);
 
   return res.json({
     result: `${n1} loves ${n2} ${lovePercent} %`,
-  });
-});
-
-app.get("/showLog", (req, res) => {
-  fs.readFile("logger.log", "utf8", (err, data) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-
-    const resultData = data.split(" \r\n");
-    resultData.pop();
-
-    return res.json({ data: resultData });
   });
 });
 
