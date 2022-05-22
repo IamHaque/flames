@@ -79,3 +79,8 @@ form button {
   letter-spacing: 0px;
   text-transform: capitalize;
 }
+
+.error {
+  color: red;
+  font-size: 0.9rem !important;
+}
